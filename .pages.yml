@@ -1,0 +1,78 @@
+
+media:
+  input: media
+  output: /media
+  categories:
+    - image
+
+content:
+  - name: films
+    label: Films
+    type: collection
+    path: content/films
+    filename: "{primary}.md"
+    format: yaml-frontmatter
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Project title
+        type: string
+        required: true
+      - name: category
+        label: Project type
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: format
+        label: Film format
+        type: string
+      - name: image
+        label: Main image
+        type: image
+      - name: description
+        label: Description
+        type: text
+      - name: link
+        label: Film link
+        type: string
+
+  - name: photographs
+    label: Photographs
+    type: collection
+    path: content/photographs
+    filename: "{primary}.md"
+    format: yaml-frontmatter
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Photo title
+        type: string
+        required: true
+      - name: image
+        label: Photograph
+        type: image
+      - name: year
+        label: Year
+        type: string
+      - name: description
+        label: Description
+        type: text
+
+  - name: site
+    label: Site settings
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - name: email
+        label: Contact email
+        type: string
+      - name: instagram
+        label: Instagram link
+        type: string
+      - name: introduction
+        label: Introduction
+        type: text
